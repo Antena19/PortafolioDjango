@@ -1,0 +1,238 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Incluye jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Bootstrap  -->
+    {% load bootstrap5 %}
+    <title>Portafolio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- icono -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+</head>
+<body>
+       
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <img class="logo1" src="{% static 'images/logo-blanco-transparente.png' %}" alt="">
+            </div>
+            <nav id="nav" class="responsive"> 
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="{% static 'images/perfil1.png' %}" alt="Perfil">
+            </div>
+            <div class="contenedor-texto">
+                <h1>ANGELINA MENDOZA</h1>
+                <h2>Estudiante de Ingeniería en Informática</h2>
+                <div class="redes">
+                    <a href="https://www.facebook.com/antena19"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/antena19/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://cl.linkedin.com/in/angelina-mendoza-ya%C3%B1ez-607741290?trk=people-guest_people_search-card"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Antena19"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+        <h2>SOBRE MÍ</h2>
+        <p>
+            <span>Hola, soy Angelina Mendoza.</span> Estudiante de segundo año de Ingeniería en Informática en Duoc UC, sede Puerto Montt. Actualmente, estoy inmersa en el fascinante mundo de la programación web como parte de mi formación académica. Este portafolio es el resultado de mi aprendizaje y práctica en la asignatura de programación web, donde hemos abordado diversos proyectos pequeños que me han permitido explorar y aplicar los conceptos fundamentales del desarrollo web. A través de este espacio, te invito a conocer mi trayectoria, mis habilidades y algunos de los proyectos en los que he trabajado. ¡Bienvenido/a a mi mundo digital!
+        </p>
+        <div class="datos-personales">
+            <h3>DATOS PERSONALES</h3>
+            <ul>
+            <li><strong>Cumpleaños</strong> 07-10-1989</li>
+            <li><strong>Teléfono</strong> +56 9 98555466</li>
+            <li><strong>Email</strong> angelina.mendoza.y@gmail.com</li>
+            <li><strong>Website</strong> www.en-construccion.com</li>
+            <li><strong>Dirección</strong> Joseph Addison 2342, Portal Puerto Montt</li>
+            </ul>
+        </div>
+        <div class="intereses">
+            <h3>INTERESES</h3>
+            <div class="contenedor-intereses">
+            <div class="interes">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>JUEGOS</span>
+            </div>
+            <div class="interes">
+                <i class="fa-solid fa-music"></i>
+                <span>MUSICA</span>
+            </div>
+            <div class="interes">
+                <i class="fa-solid fa-kitchen-set"></i>
+                <span>COCINAR</span>
+            </div>
+            <div class="interes">
+                <i class="fa-solid fa-mug-saucer"></i>
+                <span>CAFÉ</span>
+            </div>
+            <div class="interes">
+                <i class="fa-solid fa-palette"></i>
+                <span>PINTURA</span>
+            </div>
+            <div class="interes">
+                <i class="fa-solid fa-book"></i>
+                <span>LIBROS</span>
+            </div>
+            <div class="interes">
+                <i class="fa-brands fa-pagelines"></i>
+                <span>JARDINERÍA</span>
+            </div>
+            <div class="interes">
+                <i class="fa-solid fa-person-walking"></i>
+                <span>PASEAR</span>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>SKILLS</h2>
+            <li><h3>HTML</h3>
+                <span class="bar"><span class="html"></span></span>
+            </li>
+            <li><h3>CSS</h3>
+                <span class="bar"><span class="css"></span></span>
+            </li>
+            <li><h3>JAVASCRIPT</h3>
+                <span class="bar"><span class="javascript"></span></span>
+            </li>
+            <li><h3>PYTHON</h3>
+                <span class="bar"><span class="python"></span></span>
+            </li>
+            <li><h3>JAVA</h3>
+                <span class="bar"><span class="java"></span></span>
+            </li>
+        </div>   
+    </section>
+
+    <!-- SECCION CURRICULUM -->
+    <section id="curriculum" class="curriculum">
+        <div class="contenido-seccion">
+            <h2>CURRICULUM</h2>
+            <div class="fila">
+                <div class="col izquierda">
+                    <h3>Educación</h3>
+                    <div class="item izq">
+                        <h4>Ingeniería en Informática</h4>
+                        <span class="casa">Duoc UC - Puerto Montt</span>
+                        <span class="fecha">2023 - Actualidad</span>
+                    </div>
+                </div>
+
+                <div class="col derecha">
+                    <div class="item der">
+                        <h4>Kinesiología</h4>
+                        <span class="casa">Universidad Autónoma - Temuco</span>
+                        <span class="fecha">2008 - 2014</span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="portfolio" class="py-5 portfolio">
+        <div class="container contenido-seccion">
+            <h2 class="text-center">PROYECTOS</h2>
+            <div class="row">
+                {% for proyecto in proyectos %}
+                <div class="col-md-4 galeria">
+                    <div class="card mb-4 proyecto">
+                        <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo}}">
+                        <div class="card-body overlay">
+                            <h5 class="card-title">{{ proyecto.titulo }}</h5>
+                            <p class="card-text">{{ proyecto.descripcion }}</p>
+                            <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">View Site</a>
+                            <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">View Repo</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+          
+   <!-- SECCION CONTACTO -->
+<section id="contacto" class="py-5 contacto">
+    <div class="container contenido-seccion">
+        <h2 class="text-center">CONTACTO</h2>
+        <!-- Formulario -->
+        <form id="formulario" method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://tu-sitio.com/agradecimiento">
+            <div class="mb-3 col">
+                <label for="id_nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="id_nombre" name="nombre" required>
+                <div class="invalid-feedback">Por favor ingresa un nombre.</div>
+            </div>
+            <div class="mb-3 col">
+                <label for="id_email" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="id_email" name="email" required>
+                <div class="invalid-feedback">Por favor ingresa un correo.</div>
+            </div>
+            <div class="mb-3 col">
+                <label for="id_mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="id_mensaje" name="mensaje" rows="3" required></textarea>
+                <div class="invalid-feedback">Por favor ingresa un mensaje.</div>
+            </div>
+            <div class="btn-container"> <!-- Contenedor para el botón -->
+                <button type="submit" class="btn btn-msg" id="enviar-mensaje">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+       
+    <!-- footer -->
+    <footer>
+        
+        <div class="logo-pie-pagina">
+            <img src="{% static 'images/logo-blanco-transparente.png' %}" alt="Logo Blanco Transparente">
+        </div>
+        <p class="parrafo-footer">Portafolio 2024</p>
+    </footer>
+
+    <!-- SCRIPT FUNCIONALIDAD -->
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
