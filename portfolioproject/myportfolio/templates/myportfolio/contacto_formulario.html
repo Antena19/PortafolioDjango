@@ -1,12 +1,14 @@
-{% extends " 'base_generic.html'.html" %}
+{% extends "base_generic.html" %}
 
 {% block content %}
-    <div class="'container mt-5">
-        <h2>Contacta con Nosotros</h2>
-        <form method="POST" class="needs-validation" novalidate>
-            {% csrf_token %} 
-            {{ form.as_p}}
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+    <div class="container mt-5 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="login-container">
+            <h2>Contacta con Nosotros</h2>
+            <form method="POST" class="needs-validation" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
     </div>
 {% endblock %}

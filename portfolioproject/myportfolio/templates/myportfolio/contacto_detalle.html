@@ -1,0 +1,22 @@
+<!-- contacto_detalle.html -->
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Detalles del Contacto</h2>
+        <div>
+            <p><strong>Nombre:</strong> {{ contacto.nombre }}</p>
+            <p><strong>Email:</strong> {{ contacto.email }}</p>
+            <p><strong>Mensaje:</strong></p>
+            <p>{{ contacto.mensaje }}</p>
+        </div>
+        <div class="action-buttons mt-3">
+            <a href="{% url 'contacto_editar' contacto.pk %}" class="btn btn-warning">Editar</a>
+            <form method="POST" action="{% url 'contacto_eliminar' contacto.pk %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!-- contacto_editar.html -->
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Editar Contacto</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_nombre">Nombre:</label>
+                <input type="text" id="id_nombre" name="nombre" class="form-control" value="{{ contacto.nombre }}" required>
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                <input type="email" id="id_email" name="email" class="form-control" value="{{ contacto.email }}" required>
+            </div>
+            <div class="form-group">
+                <label for="id_mensaje">Mensaje:</label>
+                <textarea id="id_mensaje" name="mensaje" class="form-control" rows="4" required>{{ contacto.mensaje }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+{% endblock %}
