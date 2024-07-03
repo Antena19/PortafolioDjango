@@ -172,11 +172,11 @@
     <section id="portfolio" class="py-5 portfolio">
         <div class="container contenido-seccion">
             <h2 class="text-center">PROYECTOS</h2>
-            <div class="row">
+            <div class="row flex-nowrap overflow-auto">
                 {% for proyecto in proyectos %}
                 <div class="col-md-4 galeria">
                     <div class="card mb-4 proyecto">
-                        <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo}}">
+                        <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
                         <div class="card-body overlay">
                             <h5 class="card-title">{{ proyecto.titulo }}</h5>
                             <p class="card-text">{{ proyecto.descripcion }}</p>
@@ -189,6 +189,8 @@
             </div>
         </div>
     </section>
+
+
 
           
    <!-- SECCION CONTACTO -->

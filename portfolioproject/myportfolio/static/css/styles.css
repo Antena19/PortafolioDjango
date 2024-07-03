@@ -397,42 +397,44 @@ html{
 
 /* SECCION PORTFOLIO */
 .portfolio {
-    background-color: #252A2E;
-    color: #fff;
-    padding: 50px 20px;
+    background-color: #252A2E; /* Fondo oscuro para la sección */
+    color: #fff; /* Texto blanco por defecto */
+    padding: 50px 20px; /* Espaciado interno */
 }
 .portfolio .contenido-seccion {
-    max-width: 1100px;
-    margin: auto;
+    max-width: 1100px; /* Máximo ancho del contenedor */
+    margin: auto; /* Centrado del contenedor */
 }
 .portfolio h2 {
-    color: var(--color3);
-    font-size: 48px;
-    font-family: 'Belleza';
-    text-align: center;
-    padding: 20px 0;
+    color: var(--color3); /* Color de encabezado definido en una variable CSS */
+    font-size: 48px; /* Tamaño de fuente del encabezado */
+    font-family: 'Belleza'; /* Fuente del encabezado */
+    text-align: center; /* Alineación centrada del texto */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+.portfolio .row {
+    display: flex;
+    flex-wrap: nowrap; /* Mantener los elementos en una sola línea */
+    overflow-x: auto; /* Habilitar desplazamiento horizontal */
 }
 .portfolio .galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex: 0 0 auto; /* Evita que los elementos se envuelvan */
+    max-width: 340px; /* Ancho máximo de la tarjeta */
 }
 .portfolio .galeria .proyecto {
     position: relative;
-    max-width: 340px;
-    height: fit-content;
-    margin: 10px;
+    margin: 10px; /* Espaciado entre tarjetas */
     cursor: pointer;
 }
 .portfolio .galeria .proyecto img {
-    width: 100%;
-    display: block;
+    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+    display: block; /* Quita el espacio inferior de las imágenes */
 }
 .portfolio .galeria .proyecto .overlay {
-    /* background: linear-gradient(rgba(28,182,152,.8), rgba(28,182,152,.8)); */
-    background: linear-gradient(rgba(255, 205, 178, 0.8), rgba(255, 180, 162, 0.8)); /* CAMBIAR GRADIENTE A COLOR1 Y COLOR2 */
+    background: linear-gradient(rgba(255, 205, 178, 0.8), rgba(255, 180, 162, 0.8)); /* Fondo degradado */
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -442,25 +444,24 @@ html{
     transition: 1s;
     font-size: 18px;
     letter-spacing: 3px;
-    opacity: 0;
+    opacity: 0; /* Opacidad inicial */
+}
+.portfolio .galeria .proyecto .overlay h5,
+.portfolio .galeria .proyecto .overlay p,
+.portfolio .galeria .proyecto .overlay a {
+    color: #252A2E; /* Color negro para el texto */
 }
 .portfolio .galeria .proyecto .overlay h3 {
     margin-bottom: 20px;
-    transition: 1s;
+    transition: 1s; /* Transición suave */
 }
-.portfolio .galeria .proyecto .overlay:hover {
-    opacity: 1;
+.portfolio .galeria .proyecto:hover .overlay {
+    opacity: 1; /* Cambia opacidad al pasar el cursor */
 }
-.portfolio .galeria .proyecto .overlay:hover h3 {
-    margin-bottom: 0px;
+.portfolio .galeria .proyecto:hover .overlay h3 {
+    margin-bottom: 0px; /* Elimina el espaciado inferior al pasar el cursor */
 }
 
-/* Estilos para la sección Portfolio */
-.portfolio .galeria .proyecto .card-body h5,
-.portfolio .galeria .proyecto .card-body p,
-.portfolio .galeria .proyecto .card-body a {
-    color: #252A2E;
-}
 
 
 /* SECCION CONTACTO */
@@ -471,7 +472,8 @@ html{
     display: flex; /* UTILIZA FLEXBOX PARA CENTRAR */
     justify-content: center; /* CENTRA EL CONTENIDO HIJO HORIZONTALMENTE */
     align-items: center; /* CENTRA EL CONTENIDO HIJO VERTICALMENTE */
-    height: 100vh; /* ALTURA DEL CONTENEDOR IGUAL A LA ALTURA DE LA VENTANA */
+    height: auto; /* Cambia de 100vh a auto para evitar recortes */
+    min-height: 100vh; /* Asegura que la sección ocupe al menos toda la altura de la ventana */
 }
 .contacto .contenido-seccion {
     max-width: 1100px; /* ANCHO MÁXIMO DEL CONTENIDO */
@@ -530,8 +532,6 @@ html{
     font-size: 16px; /* TAMAÑO DE FUENTE */
     color: #fff; /* COLOR DEL TEXTO */
 }
-
-
 
 /* FOOTER */
 .parrafo-footer{
@@ -629,15 +629,21 @@ footer{
     .curriculum .fila .derecha {
         margin-left: 20px;
     }
+    .portfolio .row {
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan en dispositivos pequeños */
+    }
     .portfolio .galeria {
-        display: block;
-        width: 100%;
+        flex: 1 0 100%; /* Asegura que cada tarjeta ocupe todo el ancho disponible */
+        max-width: 100%; /* Asegura que cada tarjeta ocupe todo el ancho disponible */
     }
     .portfolio .galeria .proyecto {
-        max-width: 100%;
+        max-width: 100%; /* Asegura que cada tarjeta ocupe todo el ancho disponible */
     }
     .portfolio .galeria .proyecto img {
-        width: 100%;
+        width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+    }
+    .contacto {
+        padding-bottom: 50px; /* Añadir padding inferior para dispositivos pequeños */
     }
     .contacto .fila {
         display: block;
@@ -654,4 +660,5 @@ footer{
         display: block; /* Asegura que el botón se comporte como un bloque */
     }
 }
+
 
